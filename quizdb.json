@@ -1,0 +1,109 @@
+{
+  "mcq_questions": [
+    {
+      "id": 1,
+      "question": "If a = 5 and b is 2a, What is 2(a+b)?",
+      "options": [
+        {
+          "text": "15"
+        },
+        {
+          "text": "20"
+        },
+        {
+          "text": "25"
+        },
+        {
+          "text": "30",
+          "correct": true
+        }
+      ],
+      "selection": "",
+      "explanation": "30"
+    },
+    {
+      "id": 2,
+      "question": "If x = 10, y = 5 , what is 2x-y?",
+      "options": [
+        {
+          "text": "15",
+          "correct": true
+        },
+        {
+          "text": "40"
+        },
+        {
+          "text": "25"
+        },
+        {
+          "text": "50"
+        }
+      ],
+      "selection": "",
+      "explanation": "15"
+    },
+    {
+      "id": 3,
+      "question": "If a = 50 and b is a/2, What is a-b?",
+      "options": [
+        {
+          "text": "15"
+        },
+        {
+          "text": "40"
+        },
+        {
+          "text": "25",
+          "correct": true
+        },
+        {
+          "text": "50"
+        }
+      ],
+      "selection": "",
+      "explanation": "25"
+    },
+    {
+      "id": 4,
+      "question": "If x = 10, y = 5 , what is x+2y?",
+      "options": [
+        {
+          "text": "15"
+        },
+        {
+          "text": "40"
+        },
+        {
+          "text": "20",
+          "correct": true
+        },
+        {
+          "text": "50"
+        }
+      ],
+      "selection": "",
+      "explanation": "20"
+    },
+    {
+      "id": 5,
+      "question": "If a = 10, b = 5 , what is 2a+2b?",
+      "options": [
+        {
+          "text": "15"
+        },
+        {
+          "text": "30",
+          "correct": true
+        },
+        {
+          "text": "25"
+        },
+        {
+          "text": "50"
+        }
+      ],
+      "selection": "",
+      "explanation": "30"
+    }
+  ]
+}
