@@ -7,3 +7,67 @@
 ol{
     padding:0 ;
 }
+
+.result-box{
+    text-align: center;
+}
+
+.result-box h1{
+    font-size: 36px;
+    line-height: 42px;
+    color: #dc3545;
+}
+
+.result-box table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0px;
+}
+
+.result-box table td{
+    border: 1px solid #CCCCCC;
+    padding: 8px 15px;
+    font-weight: 500px;
+    color: black;
+    width: 50%;
+    text-align: left;
+    font-size: 18px;
+}
+
+.answers-indicator{
+    width:100%;
+    float: left;
+}
+
+.answers-indicator{
+    margin-top: 15px;
+   border-top: 1px solid #CCCCCC;
+}
+
+.answers-indicator div{
+   height: 40px;
+   width: 40px;
+   display: inline-block;
+   background-color: #cccccc;
+   border-radius: 50%;
+   margin-right: 3px;
+   margin-top: 15px;
+   text-align: center;
+   padding-top: 7px;
+   cursor: pointer;
+}
+
+.answers-indicator div.correct{
+    background-color: green;
+    color: white;
+}
+
+.answers-indicator div.incorrect{
+    background-color: red;
+    color: white;
+}
+
+.answers-indicator div.fill{
+    background-color: green;
+    color: white;
+}
