@@ -69,7 +69,7 @@
             </tr>
             <tr>
                 <td>Time</td>
-                <td>{{4 - formated_m}}:{{60 - formated_s}}</td>
+                <td>{{4 - formated_m}}m:{{60 - formated_s}}s</td>
             </tr>
         </table>
         <div class="answers-indicator">
@@ -81,6 +81,7 @@
         <br>
         <h3>Solution</h3>
         <div class="card" style="margin-bottom: 20px;" *ngFor="let sol of mcqQuestionList let i = index">
+
             <table>
                 <tr>Question {{mcqQuestionList[i].id}}
                     <td>
