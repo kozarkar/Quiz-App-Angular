@@ -34,12 +34,12 @@ ol{
     font-size: 18px;
 }
 
-.answers-indicator{
+.answers-indicator, .navigator{
     width:100%;
     float: left;
 }
 
-.answers-indicator{
+.answers-indicator, .navigator{
     margin-top: 15px;
    border-top: 1px solid #CCCCCC;
 }
@@ -57,6 +57,21 @@ ol{
    cursor: pointer;
 }
 
+.navigator div{
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    background-color: #cccccc;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 15px;
+    text-align: center;
+    padding-top: 7px;
+    cursor: pointer;
+ }
+
+
+
 .answers-indicator div.correct{
     background-color: green;
     color: white;
@@ -67,7 +82,7 @@ ol{
     color: white;
 }
 
-.answers-indicator div.fill{
-    background-color: green;
+.navigator div.fill{
+    background-color: blue;
     color: white;
 }

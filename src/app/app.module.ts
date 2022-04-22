@@ -11,13 +11,15 @@ import { McqQuestionComponent } from './mcq-question/mcq-question.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { FitbQuestionComponent } from './fitb-question/fitb-question.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     HeaderComponent,
-    McqQuestionComponent
+    McqQuestionComponent,
+    FitbQuestionComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { QuestionService } from './../service/question.service';
 import { Component, OnInit } from '@angular/core';
-import { interval } from 'rxjs';
+import { elementAt, interval } from 'rxjs';
 
 @Component({
   selector: 'app-mcq-question',
@@ -30,6 +30,8 @@ export class McqQuestionComponent implements OnInit {
   formated_min : any = "00";
   quizShow: boolean = true;
   resultShow: boolean = false;
+  //indicator:any;
+  bgColor:any;
 
   constructor(private questionservice: QuestionService) { }
 
@@ -65,26 +67,22 @@ export class McqQuestionComponent implements OnInit {
 
     answer(currentQno: number, i:any, option:any){
       this.selection[currentQno-1]= i;
+      let indicator = document.querySelectorAll(".navigator div");
+      indicator[currentQno-1].classList.add("fill");
+    
     
       if(option.correct){
         this.correctAnswer++;
+        this.bgColor = "green";
         this.getProgressPercent();
-
-        // let options = document.querySelectorAll(".answers-indicator div");
-        // options[this.currentQuestion].classList.add("correct");
 
       }else{
         this.inCorrectAnswer++;
         console.log("incorrect");
+        this.bgColor = "red";
         this.getProgressPercent();
-
-        // let options = document.querySelectorAll(".answers-indicator div");
-        // options[this.currentQuestion].classList.add("incorrect");
-
-
       }
-      let indicator = document.querySelectorAll(".answers-indicator div");
-      indicator[currentQno].classList.add("fill");
+
     }
 
     timer(){
@@ -110,6 +108,25 @@ export class McqQuestionComponent implements OnInit {
     showResults(){
         this.resultShow = true;
         this.quizShow = false;
+    }
+
+    getColor(){
+
+
+     
+    }
+
+    getQuestions(i:any){
+      this.currentQuestion =i;
+      this.getProgressPercent();
+      if(this.selection[this.currentQuestion] != null){
+        this.op = this.selection[this.currentQuestion]
+        
+      }else{
+        
+        this.op = null;
+      }
+      
     }
 }
 

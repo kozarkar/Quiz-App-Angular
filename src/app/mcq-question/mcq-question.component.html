@@ -44,6 +44,9 @@
               <button [hidden]="currentQuestion===mcqQuestionList.length-1" class="btn" (click)="nextQuestion()"><i class="fa text-primary fa-chevron-right fa-3x" aria-hidden="true"></i></button>
               <button [hidden]="currentQuestion!==4" (click)="showResults()" class="btn btn-primary">Submit Answers</button>
           </div>
+          <div class="navigator">
+            <div *ngFor="let option of mcqQuestionList let i= index" (click)="getQuestions(i)">{{i+1}}</div>
+        </div>
     </div>
     <div class="result-box" style="height:100vh" *ngIf="resultShow">
         <h1>Quiz Result</h1>
@@ -58,7 +61,7 @@
             </tr>
             <tr>
                 <td>Wrong Questions</td>
-                <td>{{inCorrectAnswer}}</td>
+                <td>{{mcqQuestionList.length - correctAnswer}}</td>
             </tr>
             <tr>
                 <td>Accuracy</td>
@@ -70,8 +73,11 @@
             </tr>
         </table>
         <div class="answers-indicator">
-            <div *ngFor="let option of mcqQuestionList let i= index">{{i+1}}</div>
+            <div class="indicate" [ngStyle]="{'background-color': bgColor}" *ngFor="let option of mcqQuestionList let i= index">{{i+1}}</div>
         </div>
-        <button class="btn btn-primary" routerLink="/welcome">Retake Quiz</button>
+        <br>
+        <div>
+        <button class="btn btn-primary" style="margin-top: 20px;" routerLink="/welcome">Retake Quiz</button>
+        </div>
     </div>
 </div>
