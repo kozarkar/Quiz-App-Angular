@@ -12,8 +12,8 @@ export class QuestionService {
   getMCQquestions(){
     return this.http.get<any>("http://localhost:3000/mcq_questions");
   }
-  
-  postMCQanswers(id:any,data : any){
-    return this.http.put<any>("http://localhost:3000/mcq_questions/" +id, data)
+
+  getFITBquestions(){
+    return this.http.get<any>("http://localhost:3000/fitb_questions");
   }
 }

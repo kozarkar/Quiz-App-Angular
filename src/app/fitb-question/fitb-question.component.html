@@ -1,1 +1,76 @@
-<p>fitb-question works!</p>
+<div class="container mt-5">
+    <div class="card" *ngIf="quizShow">
+        <div class="d-flex justify-content-between p-3">
+            <div class="image">
+                <img src="https://img.icons8.com/color/96/000000/angularjs.png" alt="logo" width="50">
+            </div>
+            <div class="quiz-header">
+                <h4 style="font-family: cursive;">Math Quiz</h4>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between p-3">
+            
+            <div class="question-count">
+                <span style="font-style: italic;">Question : {{currentQuestion+1}}/{{fitbQuestionList.length}}</span>
+            </div>
+            <div class="timer">
+                {{formated_min}}:{{formated_sec}}
+            </div>
+        </div>
+        <div class="progress mb-3">
+            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" [ngStyle]="{'width':progress+'%'}" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <div class="question">
+              <div class="card">
+                <h3>{{fitbQuestionList[currentQuestion]?.question}}</h3>
+              </div>              
+          </div>
+          <div class="options">
+                <div style="margin-top: 10px;">
+                    <input type="text" [(ngModel)]="op" style="width: 25% !important;" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+          </div>
+          <div class="d-flex justify-content-between">
+              <button [disabled]="currentQuestion===0" class="btn" (click)="previousQuestion(currentQuestion)"><i class="fa text-primary fa-chevron-left fa-3x" aria-hidden="true"></i></button>
+              <button [hidden]="currentQuestion===fitbQuestionList.length-1" class="btn" (click)="nextQuestion(currentQuestion)"><i class="fa text-primary fa-chevron-right fa-3x" aria-hidden="true"></i></button>
+              <button [hidden]="currentQuestion!==4" (click)="showResults()" class="btn btn-primary">Submit Answers</button>
+          </div>
+          <div class="navigator">
+            <div *ngFor="let option of fitbQuestionList let i= index" (click)="getQuestions(i)">{{i+1}}</div>
+        </div>
+    </div>
+    <div class="result-box" style="height:100vh" *ngIf="resultShow">
+        <h1>Quiz Result</h1>
+        <table>
+            <tr>
+                <td>Total Questions</td>
+                <td>{{fitbQuestionList.length}}</td>
+            </tr>
+            <tr>
+                <td>Correct Questions</td>
+                <td>{{correctAnswer}}</td>
+            </tr>
+            <tr>
+                <td>Wrong Questions</td>
+                <td>{{fitbQuestionList.length - correctAnswer}}</td>
+            </tr>
+            <tr>
+                <td>Accuracy</td>
+                <td>{{100 * correctAnswer / fitbQuestionList.length}} %</td>
+            </tr>
+            <tr>
+                <td>Time</td>
+                <td>{{formated_min}} : {{formated_sec}}</td>
+            </tr>
+        </table>
+        <div class="answers-indicator">
+            <div class="indicate" [ngStyle]="{'background-color': bgColor}" *ngFor="let option of fitbQuestionList let i= index">{{i+1}}</div>
+        </div>
+        <br>
+        <div>
+        <button class="btn btn-primary" style="margin-top: 20px;" routerLink="/welcome">Retake Quiz</button>
+        </div>
+    </div>
+</div>
+
+    

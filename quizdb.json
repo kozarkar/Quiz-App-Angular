@@ -105,5 +105,32 @@
       "selection": "",
       "explanation": "30"
     }
+  ],
+  "fitb_questions" : [
+    {
+      "id" : 1,
+      "question" : "If a = 5 and b = 2a, then 2(a+b) = ____ ",
+      "answer" : "30"    
+    },
+    {
+      "id" : 2,
+      "question" : "If a=15, b =10, 2(a+b) = ____",
+      "answer" : "50"      
+    },
+    {
+      "id" : 3,
+      "question" : "If a = 50 and b = a/2, then a-b = ____",
+      "answer" : "25"    
+    },
+    {
+      "id" : 4,
+      "question" : "If x = 10, y = 5 , then x+2y = ____",
+      "answer" : "20"          
+   	},
+    {
+      "id" : 5,
+      "question" : "If a = 10, b = 5 , then 2a+2b = ____",
+      "answer" : "30"  
+    }
   ]
 }

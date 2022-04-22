@@ -11,26 +11,21 @@ export class McqQuestionComponent implements OnInit {
 
   public mcqQuestionList : any = [];
   public currentQuestion : number = 0;
-  public marks : number =0;
-  counter=60;
   correctAnswer: number = 0;
   inCorrectAnswer: number =0;
-  
-  interval$ : any;
   selection: any = [];
   op: any ;
   progress: string ="0";
   stopTimer : any;
-  time = 0;
+  time = this.mcqQuestionList.length *60;
   dt = new Date(new Date().setTime(0));
   ctime = this.dt.getTime();
   seconds = Math.floor((this.ctime % (1000*60))/1000);
-  mintes = Math.floor((this.ctime % (1000*60*60))/(1000*60));
+  minutes = Math.floor((this.ctime % (1000*60*60))/(1000*60));
   formated_sec : any = "00";
   formated_min : any = "00";
   quizShow: boolean = true;
   resultShow: boolean = false;
-  //indicator:any;
   bgColor:any;
 
   constructor(private questionservice: QuestionService) { }
@@ -64,7 +59,7 @@ export class McqQuestionComponent implements OnInit {
       this.op = this.selection[this.currentQuestion];
       this.getProgressPercent();
     }
-    
+
     answer(currentQno: number, i:any, option:any){
       this.selection[currentQno-1]= i;
       let indicator = document.querySelectorAll(".navigator div");
@@ -85,16 +80,16 @@ export class McqQuestionComponent implements OnInit {
     timer(){
       this.stopTimer = setInterval(()=>{
         if(this.quizShow == true){
-        this.time++;
+        this.time--;
         if(this.seconds < 59){
           this.seconds++;
         }else{
           this.seconds = 0;
-          this.mintes++;
+          this.minutes++;
         }
       }
         this.formated_sec = this.seconds < 10 ? `0${this.seconds}` : `${this.seconds}`;
-        this.formated_min = this.mintes < 10 ? `0${this.mintes}` : `${this.mintes}`;
+        this.formated_min = this.minutes < 10 ? `0${this.minutes}` : `${this.minutes}`;
       },1000)
     }
     getProgressPercent(){
