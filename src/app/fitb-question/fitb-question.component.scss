@@ -34,17 +34,17 @@ ol{
     font-size: 18px;
 }
 
-.answers-indicator, .navigator{
+.answers, .navigator{
     width:100%;
     float: left;
 }
 
-.answers-indicator, .navigator{
+.answers, .navigator{
     margin-top: 15px;
    border-top: 1px solid #CCCCCC;
 }
 
-.answers-indicator div{
+.answers div{
    height: 40px;
    width: 40px;
    display: inline-block;
@@ -72,12 +72,12 @@ ol{
 
 
 
-.answers-indicator div.correct{
+.answers div.correct{
     background-color: green;
     color: white;
 }
 
-.answers-indicator div.incorrect{
+.answers div.incorrect{
     background-color: red;
     color: white;
 }

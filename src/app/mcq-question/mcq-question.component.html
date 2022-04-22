@@ -14,7 +14,7 @@
                 <span style="font-style: italic;">Question : {{currentQuestion+1}}/{{mcqQuestionList.length}}</span>
             </div>
             <div class="timer">
-                {{formated_min}}:{{formated_sec}}
+                {{formated_m}} : {{formated_s}}
             </div>
         </div>
         <div class="progress mb-3">
@@ -69,7 +69,7 @@
             </tr>
             <tr>
                 <td>Time</td>
-                <td>{{formated_min}} : {{formated_sec}}</td>
+                <td>{{4 - formated_m}}:{{60 - formated_s}}</td>
             </tr>
         </table>
         <div class="answers-indicator">
@@ -77,7 +77,19 @@
         </div>
         <br>
         <div>
-        <button class="btn btn-primary" style="margin-top: 20px;" routerLink="/welcome">Retake Quiz</button>
+        <button class="btn btn-primary" style="margin-top: 20px; margin-bottom: 20px;" routerLink="/welcome">Retake Quiz</button>
+        <br>
+        <h3>Solution</h3>
+        <div class="card" style="margin-bottom: 20px;" *ngFor="let sol of mcqQuestionList let i = index">
+            <table>
+                <tr>Question {{mcqQuestionList[i].id}}
+                    <td>
+                        {{mcqQuestionList[i].question}}
+                    </td>
+                </tr>
+            </table>
+            <p>{{sol.explanation}}</p>
+        </div>
         </div>
     </div>
 </div>

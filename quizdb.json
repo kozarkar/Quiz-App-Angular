@@ -18,8 +18,7 @@
           "correct": true 
         }
       ],
-      "selection": "",
-      "explanation": "30"
+      "explanation": "Here a = 5 and b = 2a, so b = 2x5 = 10. 2(a+b) = 2(5+10) = 2(15) = 30. Answer = 30"
     },
     {
       "id": 2,
@@ -39,8 +38,7 @@
           "text": "50"
         }
       ],
-      "selection": "",
-      "explanation": "15"
+      "explanation": "Here x = 10 so 2x = 20 and y = 5. 2x-y = 20 - 5 = 15. Answer = 15"
     },
     {
       "id": 3,
@@ -60,8 +58,7 @@
           "text": "50"
         }
       ],
-      "selection": "",
-      "explanation": "25"
+      "explanation": "Here a = 50 and b = a/2, so b = 50/2 = 25. a-b = 50 - 25 = 25. Answer = 25"
     },
     {
       "id": 4,
@@ -81,8 +78,7 @@
           "text": "50"
         }
       ],
-      "selection": "",
-      "explanation": "20"
+      "explanation": "Here x = 10 and y = 5, so 2y = 2(5) = 10. x + 2y = 10 + 10 = 20. Answer = 20"
     },
     {
       "id": 5,
@@ -102,35 +98,39 @@
           "text": "50"
         }
       ],
-      "selection": "",
-      "explanation": "30"
+      "explanation": "Here a = 10 and b = 5, so 2a = 2(10) = 20 and 2b = 2(5) = 10. 2a + 2b = 20 + 10 = 30. Answer = 30"
     }
   ],
   "fitb_questions" : [
     {
       "id" : 1,
-      "question" : "If a = 5 and b = 2a, then 2(a+b) = ____ ",
-      "answer" : "30"    
+      "question" : "If a = 5 and b is 2a, then 2(a+b) = ____ ?",
+      "answer" : "30",
+      "explanation": "Here a = 5 and b = 2a, so b = 2x5 = 10. 2(a+b) = 2(5+10) = 2(15) = 30. Answer = 30"    
     },
     {
       "id" : 2,
-      "question" : "If a=15, b =10, 2(a+b) = ____",
-      "answer" : "50"      
+      "question" : "If x = 10, y = 5 , then 2x-y = ____ ?",
+      "answer" : "50",
+      "explanation": "Here x = 10 so 2x = 20 and y = 5. 2x-y = 20 - 5 = 15. Answer = 15"      
     },
     {
       "id" : 3,
-      "question" : "If a = 50 and b = a/2, then a-b = ____",
-      "answer" : "25"    
+      "question" : "If a = 50 and b is a/2, then a-b = ____ ?",
+      "answer" : "25",
+      "explanation": "Here a = 50 and b = a/2, so b = 50/2 = 25. a-b = 50 - 25 = 25. Answer = 25"    
     },
     {
       "id" : 4,
-      "question" : "If x = 10, y = 5 , then x+2y = ____",
-      "answer" : "20"          
+      "question" : "If x = 10, y = 5 , then x+2y = ____ ?",
+      "answer" : "20",
+      "explanation": "Here x = 10 and y = 5, so 2y = 2(5) = 10. x + 2y = 10 + 10 = 20. Answer = 20"          
    	},
     {
       "id" : 5,
-      "question" : "If a = 10, b = 5 , then 2a+2b = ____",
-      "answer" : "30"  
+      "question" : "If a = 10, b = 5 , then 2a+2b = ____ ?",
+      "answer" : "30",
+      "explanation": "Here a = 10 and b = 5, so 2a = 2(10) = 20 and 2b = 2(5) = 10. 2a + 2b = 20 + 10 = 30. Answer = 30"  
     }
   ]
 }

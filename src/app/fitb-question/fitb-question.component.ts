@@ -9,33 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FitbQuestionComponent implements OnInit {
 
-
-  public fitbQuestionList : any = [];
-  public currentQuestion : number = 0;
+  fitbQuestionList : any = [];
+  currentQuestion : number = 0;
   correctAnswer: number = 0;
   inCorrectAnswer: number =0;
   selection: any = [];
   op: any ;
   progress: string ="0";
   stopTimer : any;
-  time = 0;
-  dt = new Date(new Date().setTime(0));
-  ctime = this.dt.getTime();
-  seconds = Math.floor((this.ctime % (1000*60))/1000);
-  minutes = Math.floor((this.ctime % (1000*60*60))/(1000*60));
-  formated_sec : any = "00";
-  formated_min : any = "00";
   quizShow: boolean = true;
   resultShow: boolean = false;
   bgColor:any;
+  new_seconds = 0;
+  new_minutes = 5;
+  formated_s:any ='00';
+  formated_m:any ='05';
 
-
+  
   constructor(private questionservice: QuestionService) { }
 
   ngOnInit(): void {
-    this.timer();
-    this.getAllFITBquestions()
-  }
+    this.getAllFITBquestions();
+    }
 
 
   getAllFITBquestions(){
@@ -43,9 +38,13 @@ export class FitbQuestionComponent implements OnInit {
     .subscribe(res=>{
       this.fitbQuestionList = res;
     })
+    this.timer();
   }
+  
   nextQuestion(currentQ:any){
-    this.answer(currentQ);
+    if(this.op != null){
+      this.answer(currentQ);
+    }
     this.currentQuestion++;
     this.getProgressPercent();
     if(this.selection[this.currentQuestion] != null){
@@ -58,7 +57,9 @@ export class FitbQuestionComponent implements OnInit {
   }
 
   previousQuestion(currentQuestion :any){
-    this.answer(currentQuestion);
+    if(this.op != null){
+      this.answer(currentQuestion);
+    }
     this.currentQuestion--;
     this.op = this.selection[this.currentQuestion];
     this.getProgressPercent();
@@ -69,8 +70,9 @@ export class FitbQuestionComponent implements OnInit {
     let indicator = document.querySelectorAll(".navigator div");
     indicator[currentQno].classList.add("fill");
   
-    if(this.op == this.fitbQuestionList.answer){
+    if(this.op == this.fitbQuestionList[currentQno].answer){
       this.correctAnswer++;
+      console.log("correct");
       this.bgColor = "green";
       this.getProgressPercent();
     }else{
@@ -84,18 +86,19 @@ export class FitbQuestionComponent implements OnInit {
   timer(){
     this.stopTimer = setInterval(()=>{
       if(this.quizShow == true){
-      this.time++;
-      if(this.seconds < 59){
-        this.seconds++;
-      }else{
-        this.seconds = 0;
-        this.minutes++;
-      }
+        if(this.new_seconds ==0 && this.new_minutes !=0){
+            this.new_minutes--; 
+            this.new_seconds = 60;
+    } else if(this.new_seconds ==0 && this.new_minutes ==0){
+      this.showResults();
     }
-      this.formated_sec = this.seconds < 10 ? `0${this.seconds}` : `${this.seconds}`;
-      this.formated_min = this.minutes < 10 ? `0${this.minutes}` : `${this.minutes}`;
+         this.new_seconds--;      
+  }     
+     this.formated_s = this.new_seconds < 10 ? `0${this.new_seconds}` : `${this.new_seconds}`;
+     this.formated_m = this.new_minutes < 10 ? `0${this.new_minutes}` : `${this.new_minutes}`;
     },1000)
   }
+
   getProgressPercent(){
     this.progress = ((this.currentQuestion/(this.fitbQuestionList.length-1))*100).toString();
     return this.progress;
