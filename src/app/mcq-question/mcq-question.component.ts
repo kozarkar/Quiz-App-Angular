@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { QuestionService } from './../service/question.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -26,7 +27,7 @@ export class McqQuestionComponent implements OnInit {
   display_s:any;
   display_m:any;
 
-  constructor(private questionservice: QuestionService) { }
+  constructor(private questionservice: QuestionService, private routerLink : Router) { }
 
   ngOnInit(): void {
     this.getAllMCQquestions();
@@ -108,6 +109,13 @@ export class McqQuestionComponent implements OnInit {
       }else{  
         this.op = null;
       }
+    }
+
+    exit(){
+        if(confirm("Are you sure you want to exit the quiz?")){
+          this.routerLink.navigate(["/welcome"]);
+        }
+   
     }
 }
 
