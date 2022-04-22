@@ -64,25 +64,22 @@ export class McqQuestionComponent implements OnInit {
       this.op = this.selection[this.currentQuestion];
       this.getProgressPercent();
     }
-
+    
     answer(currentQno: number, i:any, option:any){
       this.selection[currentQno-1]= i;
       let indicator = document.querySelectorAll(".navigator div");
       indicator[currentQno-1].classList.add("fill");
     
-    
       if(option.correct){
         this.correctAnswer++;
         this.bgColor = "green";
         this.getProgressPercent();
-
       }else{
         this.inCorrectAnswer++;
         console.log("incorrect");
         this.bgColor = "red";
         this.getProgressPercent();
       }
-
     }
 
     timer(){
@@ -111,8 +108,6 @@ export class McqQuestionComponent implements OnInit {
     }
 
     getColor(){
-
-
      
     }
 
@@ -120,13 +115,10 @@ export class McqQuestionComponent implements OnInit {
       this.currentQuestion =i;
       this.getProgressPercent();
       if(this.selection[this.currentQuestion] != null){
-        this.op = this.selection[this.currentQuestion]
-        
-      }else{
-        
+        this.op = this.selection[this.currentQuestion]  
+      }else{  
         this.op = null;
       }
-      
     }
 }
 

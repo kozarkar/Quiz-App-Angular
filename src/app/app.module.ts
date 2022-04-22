@@ -12,6 +12,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { FitbQuestionComponent } from './fitb-question/fitb-question.component';
+import { MtfQuestionComponent } from './mtf-question/mtf-question.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FitbQuestionComponent } from './fitb-question/fitb-question.component';
     WelcomeComponent,
     HeaderComponent,
     McqQuestionComponent,
-    FitbQuestionComponent
+    FitbQuestionComponent,
+    MtfQuestionComponent
   ],
   imports: [
     BrowserModule,
