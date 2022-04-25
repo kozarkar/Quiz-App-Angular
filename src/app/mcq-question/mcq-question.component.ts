@@ -24,13 +24,13 @@ export class McqQuestionComponent implements OnInit {
   new_minutes = 5;
   formated_s:any ='00';
   formated_m:any ='05';
-  display_s:any;
-  display_m:any;
+
 
   constructor(private questionservice: QuestionService, private routerLink : Router) { }
 
   ngOnInit(): void {
     this.getAllMCQquestions();
+    
   }
 
     getAllMCQquestions(){
@@ -39,8 +39,6 @@ export class McqQuestionComponent implements OnInit {
         this.mcqQuestionList = res;
       })
       this.timer();
-      this.display_s  = Number(this.formated_s);
-      this.display_m = Number(this.formated_m);
     }
 
     nextQuestion(){
@@ -115,7 +113,5 @@ export class McqQuestionComponent implements OnInit {
         if(confirm("Are you sure you want to exit the quiz?")){
           this.routerLink.navigate(["/welcome"]);
         }
-   
     }
 }
-

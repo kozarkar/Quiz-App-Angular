@@ -1,3 +1,4 @@
+
 import { Router } from '@angular/router';
 import { QuestionService } from './../service/question.service';
 import { Component, OnInit } from '@angular/core';
@@ -25,14 +26,13 @@ export class FitbQuestionComponent implements OnInit {
   new_minutes = 5;
   formated_s:any ='00';
   formated_m:any ='05';
-
   
-  constructor(private questionservice: QuestionService, private routerLink : Router) { }
+  
+  constructor(private questionservice: QuestionService, private routerLink : Router) {}
 
   ngOnInit(): void {
     this.getAllFITBquestions();
     }
-
 
   getAllFITBquestions(){
     this.questionservice.getFITBquestions()
@@ -122,6 +122,5 @@ export class FitbQuestionComponent implements OnInit {
     if(confirm("Are you sure you want to exit the quiz?")){
       this.routerLink.navigate(["/welcome"]);
     }
-
-}
+  }
 }
