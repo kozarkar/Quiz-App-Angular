@@ -1,10 +1,33 @@
 # Angular QUIZ App
 
+## Project :
+
+### Frontend - Angular 13
+### Backend + Database - JSON-server
+
+## CONTENTS :
+
+This project contains two quiz types, MCQ quiz and Fill in the blanks quiz.
+
+It includes a navigator between questions, a correct/incorrect selections counter and a result page with answer explanations.
+
+
+## FUTURE : 
+
+Plans to add a third type of quiz, 'Match the following'.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Backend & Database
+
+First, install jason-server if you haven't.  Through npm : `npm i -g json-server`
+
+Inside project,
+Run `json-server --watch quizdb.json` for running a dummy backend with database to handle service requests. 
 
 ## Code scaffolding
 
