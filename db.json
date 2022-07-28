@@ -111,7 +111,7 @@
     {
       "id" : 2,
       "question" : "If x = 10, y = 5 , then 2x-y = ____ ?",
-      "answer" : "50",
+      "answer" : "15",
       "explanation": "Here x = 10 so 2x = 20 and y = 5. 2x-y = 20 - 5 = 15. Answer = 15"      
     },
     {
